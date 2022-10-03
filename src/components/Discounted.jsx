@@ -4,7 +4,7 @@ import Book from "./ui/Book";
 
 function Discounted() {
     return (
-        <section className="" id="recent">
+        <section className="" id="discounted">
             <div className="container">
                 <div className="row">
                     <div className="section__title">
