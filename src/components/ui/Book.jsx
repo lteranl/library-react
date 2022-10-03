@@ -15,9 +15,10 @@ function Book({ book }) {
                 </a>
             </div>
             <div className="book__ratings">
-                {new Array(5).fill(0).map((_, index) => (
+                {new Array(Math.floor(book.rating)).fill(0).map((_, index) => (
                     <FaStar key={index} />
                 ))}
+                {!Number.isInteger(book.rating) && <FaStarHalfAlt />}
             </div>
             <div className="book__price">
                 {book.salePrice ? (
