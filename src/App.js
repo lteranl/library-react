@@ -5,6 +5,7 @@ import Home from "./components/pages/Home";
 import Footer from "./components/Footer";
 import Books from "./components/pages/Books";
 import { books } from "./data";
+import BookInfo from "./components/pages/BookInfo";
 
 function App() {
     return (
@@ -14,6 +15,10 @@ function App() {
                 <Routes>
                     <Route path="/" exact element={<Home />} />
                     <Route path="/books" element={<Books books={books} />} />
+                    <Route
+                        path="/books/1"
+                        element={<BookInfo books={books} />}
+                    />
                 </Routes>
                 <Footer />
             </div>
