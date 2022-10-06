@@ -29,6 +29,11 @@ function App() {
         );
     }
 
+    function removeItem(item) {
+        // filter() returns a new array with the same elements in the same order as the original array, but with the elements that don't pass the test removed from the new array
+        setCart(cart.filter((book) => book.id !== item.id));
+    }
+
     console.log(cart);
 
     return (
@@ -55,6 +60,7 @@ function App() {
                                 books={books}
                                 cart={cart}
                                 changeQuantity={changeQuantity}
+                                removeItem={removeItem}
                             />
                         }
                     />
