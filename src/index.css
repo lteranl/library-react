@@ -580,6 +580,7 @@ select {
     max-height: 500px;
     width: auto;
     max-width: 100%;
+    border-radius: 5px;
 }
 
 .book__selected--description {
