@@ -5,10 +5,10 @@ import Rating from "../ui/Rating";
 import Price from "../ui/Price";
 import Book from "../ui/Book";
 
-function BookInfo({ books }) {
+function BookInfo({ books, addToCart }) {
     const { id } = useParams();
     const book = books.find((book) => +book.id === +id);
-    console.log(book);
+
     return (
         <div id="books__body">
             <main id="books__main">
@@ -61,7 +61,12 @@ function BookInfo({ books }) {
                                         Qui, voluptate culpa.
                                     </p>
 
-                                    <button className="btn">Add to Cart</button>
+                                    <button
+                                        className="btn"
+                                        onClick={() => addToCart(book)}
+                                    >
+                                        Add to Cart
+                                    </button>
                                 </div>
                             </div>
                         </div>
