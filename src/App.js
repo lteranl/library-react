@@ -34,12 +34,17 @@ function App() {
         setCart(cart.filter((book) => book.id !== item.id));
     }
 
+    function numberOfItemsInCart() {
+        let count = 0;
+        cart.forEach((item) => (count += item.quantity));
+        return count;
+    }
     console.log(cart);
 
     return (
         <Router>
             <div className="App">
-                <Nav />
+                <Nav numberOfItemsInCart={numberOfItemsInCart()} />
                 <Routes>
                     <Route path="/" exact element={<Home />} />
                     <Route path="/books" element={<Books books={books} />} />
