@@ -16,7 +16,7 @@ function App() {
                     <Route path="/" exact element={<Home />} />
                     <Route path="/books" element={<Books books={books} />} />
                     <Route
-                        path="/books/1"
+                        path="/books/:id"
                         element={<BookInfo books={books} />}
                     />
                 </Routes>
