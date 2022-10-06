@@ -22,7 +22,7 @@ function Book({ book }) {
             // cleanup function to set flag false, when component unmounted
             mountedRef.current = false;
         };
-    }, [book.url]);
+    });
 
     return (
         <div className="book">
