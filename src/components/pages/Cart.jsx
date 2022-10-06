@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import EmptyCart from "../../assets/empty_cart.svg";
 
 function Cart({ cart, changeQuantity, removeItem }) {
     const [subtotal, setSubtotal] = useState(0);
@@ -92,27 +94,44 @@ function Cart({ cart, changeQuantity, removeItem }) {
                                     </div>
                                 ))}
                             </div>
+                            {cart.length === 0 && (
+                                <div className="cart__empty">
+                                    <img
+                                        src={EmptyCart}
+                                        alt=""
+                                        className="cart__empty--img"
+                                    />
+                                    <h2>No books in your cart!</h2>
+                                    <Link to="/books">
+                                        <button className="btn">
+                                            Browse books
+                                        </button>
+                                    </Link>
+                                </div>
+                            )}
                         </div>
-                        <div className="total">
-                            <div className="total__item total__sub-total">
-                                <span>Subtotal</span>
-                                <span>${subtotal}</span>
+                        {cart.length > 0 && (
+                            <div className="total">
+                                <div className="total__item total__sub-total">
+                                    <span>Subtotal</span>
+                                    <span>${subtotal}</span>
+                                </div>
+                                <div className="total__item total__tax">
+                                    <span>Tax</span>
+                                    <span>${tax}</span>
+                                </div>
+                                <div className="total__item total__price">
+                                    <span>Total</span>
+                                    <span>${total}</span>
+                                </div>
+                                <button
+                                    className="btn btn__checkout no-cursor"
+                                    onClick={() => alert("future update")}
+                                >
+                                    Checkout
+                                </button>
                             </div>
-                            <div className="total__item total__tax">
-                                <span>Tax</span>
-                                <span>${tax}</span>
-                            </div>
-                            <div className="total__item total__price">
-                                <span>Total</span>
-                                <span>${total}</span>
-                            </div>
-                            <button
-                                className="btn btn__checkout no-cursor"
-                                onClick={() => alert("future update")}
-                            >
-                                Checkout
-                            </button>
-                        </div>
+                        )}
                     </div>
                 </div>
             </main>
