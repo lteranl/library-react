@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Cart({ cart, changeQuantity }) {
+function Cart({ cart, changeQuantity, removeItem }) {
     const [subtotal, setSubtotal] = useState(0);
     const [tax, setTax] = useState(0);
     const [total, setTotal] = useState(0);
@@ -56,7 +56,12 @@ function Cart({ cart, changeQuantity }) {
                                                         book.originalPrice
                                                     ).toFixed(2)}
                                                 </span>
-                                                <button className="cart__book--remove">
+                                                <button
+                                                    className="cart__book--remove"
+                                                    onClick={() =>
+                                                        removeItem(book)
+                                                    }
+                                                >
                                                     Remove
                                                 </button>
                                             </div>
