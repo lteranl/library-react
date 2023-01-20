@@ -10,6 +10,9 @@ function Nav({ numberOfItemsInCart }) {
     function closeMenu() {
         document.body.classList.remove("menu--open");
     }
+
+    //cart is more than 10 items
+    const cartLength = numberOfItemsInCart > 10 ? "10+" : numberOfItemsInCart;
     return (
         <nav>
             <div className="nav__container">
@@ -37,7 +40,8 @@ function Nav({ numberOfItemsInCart }) {
                         </Link>
                         {numberOfItemsInCart > 0 && (
                             <span className="cart__length">
-                                {numberOfItemsInCart}
+                                {/* {numberOfItemsInCart} */}
+                                {cartLength}
                             </span>
                         )}
                     </li>
