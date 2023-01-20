@@ -51,17 +51,29 @@ function Nav({ numberOfItemsInCart }) {
                     </button>
                     <ul className="menu__links">
                         <li className="menu__list">
-                            <Link to="/" className="menu__link">
+                            <Link
+                                to="/"
+                                className="menu__link"
+                                onClick={closeMenu}
+                            >
                                 Home
                             </Link>
                         </li>
                         <li className="menu__list">
-                            <Link to="/books" className="menu__link">
+                            <Link
+                                to="/books"
+                                className="menu__link"
+                                onClick={closeMenu}
+                            >
                                 Books
                             </Link>
                         </li>
                         <li className="menu__list">
-                            <Link to="cart" className="menu__link">
+                            <Link
+                                to="cart"
+                                className="menu__link"
+                                onClick={closeMenu}
+                            >
                                 Cart
                             </Link>
                         </li>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import Rating from "../ui/Rating";
@@ -8,6 +8,11 @@ import Book from "../ui/Book";
 function BookInfo({ books, addToCart, cart }) {
     const { id } = useParams();
     const book = books.find((book) => +book.id === +id);
+
+    //scroll to to top on load using useEffect hook everytime the component loads
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [book]);
 
     function addBookToCart(book) {
         addToCart(book);
