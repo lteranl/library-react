@@ -14,6 +14,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -223,6 +224,7 @@ LANDING
 
 #landing {
     background-color: rgba(115, 66, 214, 0.1);
+    padding-top: 50px;
 }
 
 header {
